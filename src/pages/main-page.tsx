@@ -1,9 +1,9 @@
 import * as React from 'react';
-import FooterComponent from '../../components/footer/footer';
-import ItemCategoryComponent from '../../components/item-category/item-category';
-import ItemsComponent from '../../components/items/items';
-import NavbarComponent from '../../components/navbar/navbar';
-import { get } from '../../functions/http';
+import FooterComponent from '../components/footer/footer';
+import ItemCategoryComponent from '../components/item-category/item-category';
+import ItemsComponent from '../components/items/items';
+import NavbarComponent from '../components/navbar/navbar';
+import { get } from '../functions/http';
 
 const MainPage:React.FC = () => {
   const [items, setItems] = React.useState<ItemType[]>([]);
@@ -22,7 +22,7 @@ return (
   <div>
     <NavbarComponent />
     <ItemCategoryComponent />
-    <ItemsComponent />
+    <ItemsComponent items={items} />
     <FooterComponent />
   </div>
   );

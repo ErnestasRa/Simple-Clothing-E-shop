@@ -27,5 +27,27 @@
 
     & a {
         text-decoration: none;
+        &:hover {
+            color: colors.$hovercolor;
+        }
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0;
+            bottom: 0;
+            height: 2px;
+            margin: -5px 0;
+            left: 0;
+            background-color: colors.$hovercolor;
+            transition: all 0.2s ease-in 0s;
+        }
+        &:hover:after {
+            width: 100%;
+        }
+    }
+
+    & h3 {
+        color: colors.$hovercolor
     }
 }

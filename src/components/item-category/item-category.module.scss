@@ -7,7 +7,6 @@
     align-items: center;
     & h2 {
         font-size: 2rem;
-        color: #555;
         font-size: 2rem;
         margin-top: 1.2em;
     }
@@ -17,8 +16,36 @@
         display: inline-block;
         margin-top: 1.5rem;
     }
+
+    & ul {
+        display: flex;
+        list-style-type: none;
+        margin-right: 1.5em;
+    }
    
     & a {
         text-decoration: none;
-    }
+        text-transform: lowercase;
+        font-weight: 500;
+        display: inline-block;
+        position: relative;
+        &:hover {
+            color: colors.$hovercolor;
+        }
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0;
+            bottom: 0;
+            height: 2px;
+            margin: -5px 0;
+            left: 0;
+            background-color: colors.$hovercolor;
+            transition: all 0.2s ease-in 0s;
+        }
+        &:hover:after {
+            width: 100%;
+        }
+}
 }

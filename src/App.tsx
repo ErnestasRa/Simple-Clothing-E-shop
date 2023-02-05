@@ -4,7 +4,8 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import MainPage from './pages/global/main-page';
+import MainPage from './pages/main-page';
+import ProfilePage from './pages/profile-page';
 import './styles/index.scss';
 
 const App:React.FC = () => (
@@ -12,6 +13,7 @@ const App:React.FC = () => (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Routes>
     </BrowserRouter>
   </div>

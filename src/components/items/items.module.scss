@@ -1,6 +1,9 @@
 .items_container {
-    margin-top: 1.5rem;
+    margin-top: 6.5rem;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
