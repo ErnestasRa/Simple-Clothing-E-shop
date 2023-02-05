@@ -2,7 +2,7 @@ import * as React from 'react';
 import classes from './navbar.module.scss';
 
 const NavbarComponent: React.FC = () => (
-  <div className={classes.navbar_container}>
+  <div className={classes.navbar_container} id="#nav">
     <h3>
       Shop
     </h3>
