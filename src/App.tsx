@@ -1,12 +1,19 @@
 import * as React from 'react';
-import ItemCategoryComponent from './components/item-category/item-category';
-import NavbarComponent from './components/navbar/navbar';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from 'react-router-dom';
+import MainPage from './pages/global/main-page';
 import './styles/index.scss';
 
 const App:React.FC = () => (
   <div className="App">
-    <NavbarComponent />
-    <ItemCategoryComponent />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+      </Routes>
+    </BrowserRouter>
   </div>
   );
 

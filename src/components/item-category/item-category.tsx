@@ -1,22 +1,17 @@
 import * as React from 'react';
+import uniqid from 'uniqid';
 import classes from './item-category.module.scss';
+import { shopCategories } from '../../shop-info';
 
 const ItemCategoryComponent:React.FC = () => (
   <div className={classes.category_container}>
     <h2>Shop</h2>
     <ul>
-      <a href="/">
-        <li>T-shirts</li>
-      </a>
-      <a href="/">
-        <li>Hoodies</li>
-      </a>
-      <a href="/">
-        <li>Posters</li>
-      </a>
-      <a href="/">
-        <li>Albums</li>
-      </a>
+      {shopCategories.map((category) => (
+        <li key={uniqid()}>
+          <a href={category.href}>{category.name}</a>
+        </li>
+))}
     </ul>
   </div>
   );
