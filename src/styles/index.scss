@@ -1,0 +1,19 @@
+@use './colors';
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    margin-top: 0px;
+    border: 0;
+    outline: 0;
+    background-color: colors.$bgcolor;
+    font-family: "Poppins";
+    box-shadow: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+};
+
+body {
+    font-family: "Poppins";
+}

@@ -1,0 +1,31 @@
+@use '../../styles/colors';
+
+.navbar_container {
+    align-items: center;
+    background-color: inherit;
+    display: flex;
+    height: 8em;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1100px;
+    width: 95%;
+
+    & li {
+        margin-left: 1.5rem;
+        display: inline-block;
+        font-weight: 500;
+        position: relative;
+        text-decoration: none;
+        text-transform: lowercase;
+    }
+
+    & ul {
+        display: flex;
+        list-style-type: none;
+        margin-right: 1.5em;
+    }
+
+    & a {
+        text-decoration: none;
+    }
+}

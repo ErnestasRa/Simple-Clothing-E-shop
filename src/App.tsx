@@ -1,9 +1,12 @@
 import * as React from 'react';
-import './App.css';
+import ItemCategoryComponent from './components/item-category/item-category';
+import NavbarComponent from './components/navbar/navbar';
+import './styles/index.scss';
 
 const App:React.FC = () => (
   <div className="App">
-    test
+    <NavbarComponent />
+    <ItemCategoryComponent />
   </div>
   );
 
