@@ -4,4 +4,5 @@ type ItemType = {
     description: string,
     image: string,
     price: string,
+    category: string,
 };

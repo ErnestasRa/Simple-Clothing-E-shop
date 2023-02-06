@@ -3,28 +3,28 @@ import FooterComponent from '../components/footer/footer';
 import ItemCategoryComponent from '../components/item-category/item-category';
 import ItemsComponent from '../components/items/items';
 import NavbarComponent from '../components/navbar/navbar';
-import { get } from '../functions/http';
+import ItemContext from '../context/ItemContext';
+import { post } from '../functions/http';
 
 const MainPage:React.FC = () => {
-  const [items, setItems] = React.useState<ItemType[]>([]);
+  const { items, setItems } = React.useContext(ItemContext);
 
-  const getItems = async () => {
-    const res = await get('getitems');
+  const getItemsByCategory = async (category:string) => {
+    const data = {
+      category,
+    };
+    const res = await post('categoryitem', data);
     if (!res.error) setItems(res);
     else throw new Error('Error');
   };
 
-  React.useEffect(() => {
-    getItems();
-  }, []);
-
-return (
-  <div>
-    <NavbarComponent />
-    <ItemCategoryComponent />
-    <ItemsComponent items={items} />
-    <FooterComponent />
-  </div>
+ return (
+   <div>
+     <NavbarComponent />
+     <ItemCategoryComponent getItemsByCategory={getItemsByCategory} />
+     <ItemsComponent items={items} />
+     <FooterComponent />
+   </div>
   );
-};
+ };
 export default MainPage;

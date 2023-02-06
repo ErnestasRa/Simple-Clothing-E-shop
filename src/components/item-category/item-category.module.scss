@@ -23,12 +23,13 @@
         margin-right: 1.5em;
     }
    
-    & a {
+    & button {
         text-decoration: none;
         text-transform: lowercase;
         font-weight: 500;
         display: inline-block;
         position: relative;
+        cursor: pointer;
         &:hover {
             color: colors.$hovercolor;
         }

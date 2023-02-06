@@ -19,21 +19,31 @@ const header = {
 
 const shopCategories = [
     {
-        name: 'Hoodies',
+        name: 'All',
         href: '/',
+        category: 'All',
     },
     {
-        name: 'T-Shirts',
+        name: 'Hoodies',
         href: '/',
+        category: 'Hoodie',
+    },
+    {
+        name: 'T-Shirt',
+        href: '/',
+        category: 'T-Shirt',
     },
     {
         name: 'Albums',
         href: '/',
+        category: 'Album',
     },
     {
         name: 'Posters',
         href: '/',
+        category: 'Poster',
     },
+
 ];
 
 export { header, shopCategories };
