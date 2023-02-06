@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-constructed-context-values */
 import * as React from 'react';
 import {
   BrowserRouter,
@@ -9,33 +10,31 @@ import MainPage from './pages/main-page';
 import ProfilePage from './pages/profile-page';
 import './styles/index.scss';
 import ItemContext from './context/ItemContext';
-import { get } from './functions/http';
+import CartContext from './context/cartContext';
+import getData from './functions/fetchData';
 
 const App:React.FC = () => {
   const [items, setItems] = React.useState<ItemType[]>([]);
-
-  const getItems = async () => {
-    const res = await get('getitems');
-    if (!res.error) setItems(res);
-    else throw new Error('Error');
-  };
+  const [cart, setCartItems] = React.useState<ItemType[]>([]);
 
   React.useEffect(() => {
-    getItems();
+    getData('getitems', setItems);
+    getData('cartitems', setCartItems);
   }, []);
 
 return (
-  // eslint-disable-next-line react/jsx-no-constructed-context-values
   <ItemContext.Provider value={{ items, setItems }}>
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/cart" element={<CartPage />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <CartContext.Provider value={{ cart, setCartItems }}>
+      <div className="App">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/cart" element={<CartPage />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </CartContext.Provider>
   </ItemContext.Provider>
   );
 };

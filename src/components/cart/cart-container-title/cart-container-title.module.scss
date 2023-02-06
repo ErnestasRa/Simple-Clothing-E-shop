@@ -1,0 +1,11 @@
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & h2 {
+        font-size: 2rem;
+        margin-top: 1.2em;
+    }
+}

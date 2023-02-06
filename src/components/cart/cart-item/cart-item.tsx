@@ -1,20 +1,20 @@
 import * as React from 'react';
-import classes from './single-item.module.scss';
+import classes from './cart-item.module.scss';
 
-type SingleItemContainerType = {
+type CartItemContainerType = {
     image: string,
     name: string,
     description: string,
     price: string
-    addToCart: VoidFunction
+    removeFromCart: VoidFunction
 };
 
-const SingleItemContainer:React.FC<SingleItemContainerType> = ({
+const CartItemContainer:React.FC<CartItemContainerType> = ({
     image,
     name,
     description,
     price,
-    addToCart,
+    removeFromCart,
 }) => (
   <div className={classes.Single_item}>
     <img alt="img" src={image} />
@@ -24,8 +24,8 @@ const SingleItemContainer:React.FC<SingleItemContainerType> = ({
       $
       {price}
     </span>
-    <button onClick={() => addToCart()}>Add to cart</button>
+    <button onClick={() => removeFromCart()}>Remove from cart</button>
   </div>
   );
 
-export default SingleItemContainer;
+export default CartItemContainer;

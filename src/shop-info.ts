@@ -10,10 +10,6 @@ const header = {
             name: 'Profile',
             to: '/profile',
         },
-        {
-            name: 'Cart',
-            to: '/cart',
-        },
     ],
 };
 
